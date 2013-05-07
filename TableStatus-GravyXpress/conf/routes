@@ -1,0 +1,15 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Defines all routes when action is taken on the template
+GET     /tables                     	controllers.Tables.tasks()
+POST    /tables                     	controllers.Tables.newTable()
+POST	/tables/						controllers.Tables.resetCount()
+POST	/tables/:id/sitHere				controllers.Tables.sitHere(id: Long)
+POST	/tables/:id/customerLeft		controllers.Tables.customerLeft(id: Long)
+POST	/tables/:id/finishedCleaning	controllers.Tables.finishedCleaning(id: Long)
+POST    /tables/:id/delete          	controllers.Tables.deleteTask(id: Long)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
